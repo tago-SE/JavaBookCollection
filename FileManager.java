@@ -1,6 +1,6 @@
 package lab_3b_1;
 
-public class FileManager {
+    public class FileManager {
     
     private final String fileName;
     
@@ -10,7 +10,7 @@ public class FileManager {
     
     public CollectionOfBooks load(){
         // Load code here.
-        return null;
+        return null;    // Throw exception if failed to load.
     }
     
     public void save(CollectionOfBooks toSave) {
