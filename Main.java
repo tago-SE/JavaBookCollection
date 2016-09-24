@@ -9,7 +9,8 @@ public class Main {
         CollectionOfBooks collection;
         
         FileManager fileManager = new FileManager("some_file_name"); 
-        // if no file was found do:
+        
+        // if no file was found do: // Catch exception
             collection = new CollectionOfBooks();
         // else do:
             // collection = fileManager.load();
