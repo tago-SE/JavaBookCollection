@@ -10,6 +10,7 @@ package lab_3b_1;
     
     public CollectionOfBooks load(){
         // Load code here.
+        // return someCollectionOfBooks; 
         return null;    // Throw exception if failed to load.
     }
     
