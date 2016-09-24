@@ -17,7 +17,7 @@ public class Main {
         // endif
         
         UserInterface ui = new UserInterface(collection);
-                System.out.println(collection.toString());
+        System.out.println(collection.toString());
         while (ui.runMainMenu()) {
             // Empty
         }
