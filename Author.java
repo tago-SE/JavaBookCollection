@@ -6,9 +6,16 @@ package lab_3b_1;
  * @author Tiago Redaelli <tiagor@kth.se> and Alexander Nordlund.
  */
 
-public class Author {
+import java.io.Serializable;
+
+/**
+ *
+ * @author fauzianordlund
+ */
+public class Author implements Serializable{
     private String name;
-   
+    private static final long serialVersionUID = -9152366823741777802L;
+
     public Author() {
         this.name = "";
     }
