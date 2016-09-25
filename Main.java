@@ -8,15 +8,19 @@ public class Main {
     public static void main(String[] args) throws NoOptionException  {
         CollectionOfBooks collection;
         
-        FileManager fileManager = new FileManager("some_file_name"); 
-        
-        // if no file was found do: // Catch exception
-            collection = new CollectionOfBooks();
+         
+       
+        FileManager filemanager = new FileManager("files.ser");
+        //f
+        //if no file was found do: // Catch exception
+        collection = new CollectionOfBooks();
         // else do:
             // collection = fileManager.load();
         // endif
-        
+      //  filemanager.connectToBooks(collection);
+        //Association between collection and the other thing.
         UserInterface ui = new UserInterface(collection);
+        ui.hookUItoFileManager(filemanager);
         System.out.println(collection.toString());
         while (ui.runMainMenu()) {
             // Empty
@@ -24,6 +28,7 @@ public class Main {
         
         // tells the program to save the file coming from ui.getUserChanges
         collection = ui.getUserChanges();
-        fileManager.save(collection);
+        filemanager.load();
+       // filemanager.save(collection);
     }
 }

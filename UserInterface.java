@@ -8,7 +8,7 @@ public class UserInterface {
     
     private Menu mainMenu;
     private CollectionOfBooks collection;
-    
+    private FileManager manager;
     public UserInterface(CollectionOfBooks books) {
         this.mainMenu = new Mainmenu("Main menu");
         this.collection = books;
@@ -22,7 +22,18 @@ public class UserInterface {
             System.out.println(b.toString());
         }
     }
-    
+    /* /*
+      void setDealer(Dealer newDealer){
+        oneDealer = newDealer;
+    }
+    void dealerToDeck(Deck theDeck){ 
+        deck = theDeck;           
+        deck.setDealer(this); //deck has 'a dealer'
+    }*/
+    void hookUItoFileManager(FileManager UsersFiles){
+        manager = UsersFiles; 
+        System.out.println("Done");
+    }
     public CollectionOfBooks getUserChanges() {
         return this.collection;
     }
@@ -30,7 +41,8 @@ public class UserInterface {
     public boolean runMainMenu() throws NoOptionException {
         this.mainMenu.print();
         switch (this.mainMenu.getUserOption()) {
-            case 1: this.collection.append(this.mainMenu.addBooks());
+            case 1: this.collection.append(this.mainMenu.addBooks());  
+                    //manager.save(collection);
                     break;
             case 2: this.collection = this.mainMenu.removeBooks(this.collection); 
                     break; 
@@ -38,7 +50,7 @@ public class UserInterface {
                     break;
             case 4: this.mainMenu.searchBooks(collection);
                     break;
-            case 5: /*this.mainMenu.saveAndExit();*/ 
+            case 5: manager.save(collection);
                     return false; // don't rerun
             default:  throw new NoOptionException();
         }

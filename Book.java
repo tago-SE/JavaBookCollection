@@ -90,7 +90,7 @@ public class Book implements Comparable<Book> {
    
     @Override
     public String toString() {
-        String s = "Title: " + this.getTitle() + " Edition: " + this.getEdition() + " ISBN: " + this.getIsbn() + " Price: " + this.getPrice() + " Author(s): ";
+        String s = "Title: " + this.getTitle() + "\nEdition: " + this.getEdition() + "\nISBN: " + this.getIsbn() + "\nPrice: " + this.getPrice() + "\nAuthor(s): ";
         int i = 0;
         for (Author author : authors) {
             if (i > 0) {

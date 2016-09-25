@@ -11,7 +11,17 @@ import java.util.Collections;
 public class CollectionOfBooks {
    
     private ArrayList<Book> bookCollection;
-   
+    private FileManager filemanager;
+     /*
+     void setDealer(Dealer newDealer){
+        oneDealer = newDealer;
+    }
+    void playerToDeck(Deck mainDeck){
+         myDeck = mainDeck;
+         myDeck.setPlayer(this);
+    }
+    */
+ 
     public CollectionOfBooks() {
         this.bookCollection = new ArrayList<>();
     }
