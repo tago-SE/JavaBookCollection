@@ -40,6 +40,7 @@ public class CollectionOfBooks implements Serializable {
            *  isbn, price, author and title
            * 
            */    
+ 
     public void removeBook(Book book) {
         this.bookCollection.remove(book);    
              
@@ -65,6 +66,7 @@ public class CollectionOfBooks implements Serializable {
            *  @return the closest match(es) to keyword if any exists
            *  
            */ 
+ 
     public ArrayList<Book> searchBookByIsbn(String keyword){
         ArrayList<Book> search = new ArrayList<>();
         for (Book b : this.bookCollection) {
@@ -152,4 +154,3 @@ public class CollectionOfBooks implements Serializable {
         }
     }
 }
-
