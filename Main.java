@@ -6,29 +6,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws NoOptionException  {
-        CollectionOfBooks collection;
-        
-         
-       
-        FileManager filemanager = new FileManager("files.ser");
-        //f
-        //if no file was found do: // Catch exception
-        collection = new CollectionOfBooks();
-        // else do:
-            // collection = fileManager.load();
-        // endif
-      //  filemanager.connectToBooks(collection);
-        //Association between collection and the other thing.
+         public static void main(String[] args)throws NoOptionException,IOException {	  	
+        FileManager filemanager = new FileManager();
+        CollectionOfBooks collection = filemanager.loadFromFile();	
         UserInterface ui = new UserInterface(collection);
-        ui.hookUItoFileManager(filemanager);
-        System.out.println(collection.toString());
-        while (ui.runMainMenu()) {
-            // Empty
-        }
         
-        // tells the program to save the file coming from ui.getUserChanges
+       // ui.hookUItoFileManager(filemanager);
+        while(ui.runMainMenu()){
+            //
+        }
+        filemanager.saveToFile(collection);
         collection = ui.getUserChanges();
-        filemanager.load();
-       // filemanager.save(collection);
-    }
+     }
 }
