@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Menu {
-    
-    private String header;
+      private String header;
     private ArrayList<String> options;
     
     public Menu(String header_) {
@@ -41,27 +40,33 @@ public class Menu {
         return option;
     }
 
-    /*
-        Useless methods I couldn't get rid of for some reason
-    */
     
+    //    Useless methods I couldn't get rid of for some reason
+    
+    
+   
+    public CollectionOfBooks addBooks(CollectionOfBooks collection){
+       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public CollectionOfBooks removeBooks(CollectionOfBooks collection) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public void listBooks(CollectionOfBooks collection) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void searchBooks(CollectionOfBooks collection) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+     public void saveAndExit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     CollectionOfBooks addBooks() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    CollectionOfBooks removeBooks(CollectionOfBooks collection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    void listBooks(CollectionOfBooks collection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void searchBooks(CollectionOfBooks collection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void saveAndExit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
