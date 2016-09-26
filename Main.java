@@ -9,17 +9,24 @@ public class Main {
         
         public static void main(String[] args) throws NoOptionException, IOException {	  	
            
-            FileManager filemanager = new FileManager();
+             // Creates the file manager with a serialization file to read from.
+            FileManager filemanager = new FileManager("file.ser");     
             
-            // Loads the book collcetion from 
+            // Deserialize (load) a collection of books from the file manager or returns an empty collection.
             CollectionOfBooks collection = filemanager.loadFromFile();	
+            
+            // Creates the user interface and sends the collection of books over to be handled internaly until finished. 
             UserInterface ui = new UserInterface(collection);
 
-           // ui.hookUItoFileManager(filemanager);
+            // Run the program until user commands exit.
             while(ui.runMainMenu()){
-                //
+                // Empty
             }
-            filemanager.saveToFile(collection);
+            
+            // Gets all the changes to the menu from user interface.
             collection = ui.getUserChanges();
+            
+            // Saves the collection of books. 
+            filemanager.saveToFile(collection);
      }
 }
