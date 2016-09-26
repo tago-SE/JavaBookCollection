@@ -8,7 +8,6 @@ import java.util.Iterator;
  * @author tiago
  */
 public class Mainmenu extends Menu {
-    
     public Mainmenu(String header_) {
         super(header_);
     }
@@ -19,35 +18,7 @@ public class Mainmenu extends Menu {
         menu.print();
         menu.getUserOption();
     }
-    
-    public CollectionOfBooks addBooks() {
-        CollectionOfBooks col = new CollectionOfBooks();
-        System.out.println("Add Book");
-        String title = UserInput.askForStr("Enter title: ");
-        String isbn = UserInput.askForStr("Enter ISBN: ");
-        double price = UserInput.askForDouble("Enter price: ");
-        int edition = UserInput.askForInt("Enter edition: ");
-        
-        // Creates the book with the above input
-        Book b = new Book(isbn, title, edition, price);
-        
-        System.out.println("Add authors. Enter nothing to finish.");
-        String author;
-        int i = 0;
-        do {
-            author = UserInput.askForStr("Author " + ++i + ": ");
-            if (author.length() != 0) {
-                b.addAuthor(author);
-            }
-        } while (author.length()!= 0);
-        if (i == 1) {
-            b.addAuthor("None");
-        }
-        System.out.println("Book added. " + b.toString());   
-        col.addBook(b);
-        return col;
-    }  
-   
+  
     public CollectionOfBooks removeBooks(CollectionOfBooks books) {
         Iterator<Book> it = books.getBooks().iterator();
         int i = 0;
@@ -142,4 +113,34 @@ public class Mainmenu extends Menu {
         // Empty
         
     }    
+
+  //  @Override
+    public CollectionOfBooks addBooks(CollectionOfBooks collection) {
+         //To change body of generated methods, choose Tools | Templates.
+             CollectionOfBooks col = new CollectionOfBooks();
+        System.out.println("Add Book");
+        String title = UserInput.askForStr("Enter title: ");
+        String isbn = UserInput.askForStr("Enter ISBN: ");
+        double price = UserInput.askForDouble("Enter price: ");
+        int edition = UserInput.askForInt("Enter edition: ");
+        
+        // Creates the book with the above input
+        Book b = new Book(isbn, title, edition, price);
+        
+        System.out.println("Add authors. Enter nothing to finish.");
+        String author;
+        int i = 0;
+        do {
+            author = UserInput.askForStr("Author " + ++i + ": ");
+            if (author.length() != 0) {
+                b.addAuthor(author);
+            }
+        } while (author.length()!= 0);
+        if (i == 1) {
+            b.addAuthor("None");
+        }
+        System.out.println("Book added. " + b.toString());   
+        col.addBook(b);
+        return col;
+    }
 }
