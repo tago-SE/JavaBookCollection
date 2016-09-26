@@ -1,5 +1,6 @@
 package lab_3b_1;
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * An instance of this class represents a book containing information such
@@ -9,13 +10,13 @@ import java.util.ArrayList;
  */
 
 
-public class Book implements Comparable<Book> {
+public class Book implements Comparable<Book>, Serializable{
     private String isbn;
     private String title;
     private int edition;
     private double price;
     private ArrayList<Author> authors;
-   
+    private static final long serialVersionUID = -9152366823741777802L;
     // Constructors
    
     public Book() {
