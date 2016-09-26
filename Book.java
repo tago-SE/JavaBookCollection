@@ -23,7 +23,7 @@ public class Book implements Comparable<Book> {
         this.title = "";
         this.edition = 0;
         this.price = 0.0;
-        this.authors = new ArrayList<>();
+        this.authors = new ArrayList<Author>();
     }
    
     public Book(String isbn_, String title_, int edition_, double price_) {

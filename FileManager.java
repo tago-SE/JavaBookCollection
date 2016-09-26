@@ -1,21 +1,8 @@
-package lab3.Lab3_2;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
-import java.io.Serializable;
-import lab_3b_1.Book;
 import lab_3b_1.CollectionOfBooks;
-
-    public class FileManager {
+public class FileManager {
     private String fileName;
      FileOutputStream fout = null;
      public FileManager(){
@@ -68,3 +55,4 @@ import lab_3b_1.CollectionOfBooks;
          }
      }
 }
+
