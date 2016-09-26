@@ -1,5 +1,4 @@
 package lab_3b_1;
-
 import java.io.Serializable;
 
 /**
