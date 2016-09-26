@@ -1,4 +1,4 @@
-
+package lab_3b_1;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,8 +22,6 @@ public class FileManager {
           * the serial file to be used.
           */
          this.fileName = fileName_;
-        
-        
      }
           /**
            * @param collection all books we added that we are going to save
@@ -52,7 +50,6 @@ public class FileManager {
 	    	}
 	    	catch(IOException e) {}
 	    } 
-         
      }
          /**
            * @param collection all books we added that we are going to save
@@ -70,8 +67,6 @@ public class FileManager {
              ObjectInputStream ois = new ObjectInputStream(fin);
              theCollection = (CollectionOfBooks) ois.readObject();
              System.out.println("Deserializing");
-             
-         
          }
          catch(IOException e){
              System.out.println(e);
@@ -88,4 +83,3 @@ public class FileManager {
          return theCollection;
      }
 }
-
