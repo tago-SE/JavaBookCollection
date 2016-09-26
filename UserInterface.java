@@ -16,21 +16,10 @@ public class UserInterface {
         this.mainMenu.addOption("Remove");
         this.mainMenu.addOption("List");
         this.mainMenu.addOption("Search");
-        this.mainMenu.addOption("Save and exit");
-        // Debug
-        for (Book b : this.collection.getBooks()) {
-            System.out.println(b.toString());
-        }
+        this.mainMenu.addOption("Save and exit");        
     }
-    /* /*
-      void setDealer(Dealer newDealer){
-        oneDealer = newDealer;
-    }
-    void dealerToDeck(Deck theDeck){ 
-        deck = theDeck;           
-        deck.setDealer(this); //deck has 'a dealer'
-    }*/
-    void hookUItoFileManager(FileManager UsersFiles){
+   
+    public void hookUItoFileManager(FileManager UsersFiles){
         manager = UsersFiles; 
         System.out.println("Done");
     }
@@ -41,19 +30,20 @@ public class UserInterface {
     public boolean runMainMenu() throws NoOptionException {
         this.mainMenu.print();
         switch (this.mainMenu.getUserOption()) {
-            case 1: this.collection.append(this.mainMenu.addBooks());  
+            case 1: this.collection.append(this.mainMenu.addBooks(this.collection));  
                     //manager.save(collection);
                     break;
             case 2: this.collection = this.mainMenu.removeBooks(this.collection); 
                     break; 
             case 3: this.mainMenu.listBooks(collection);
+                   // manager.loadFromFile(); // deserialization
                     break;
             case 4: this.mainMenu.searchBooks(collection);
                     break;
-            case 5: manager.save(collection);
-                    return false; // don't rerun
+            case 5: return false; // don't rerun
             default:  throw new NoOptionException();
         }
         return true;
     }
 }
+
